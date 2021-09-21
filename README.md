@@ -1,4 +1,4 @@
-## БАРС Груп - (Задание)[https://myte.me/tasks/82Dg5BNmUhmfhAlHu39v]
+## БАРС Груп
 
 ### Вариант A
 1. Зайти на сайт "Интернет Магазина"
@@ -11,4 +11,6 @@
 8. Указать адрес доставки
 9. Произвести оплату
 10. Ждать получение заказа
+
+![Выбор конкретной модели пылесоса](https://github.com/IVZaytsev/myte-solutions/blob/main/bars/veriant_a.png?raw=true)
 
