@@ -1,0 +1,1322 @@
+[
+    {
+        "model": "workers.position",
+        "pk": 1,
+        "fields": {
+            "desc": "Механик-Водитель",
+            "salary": 74000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 2,
+        "fields": {
+            "desc": "Командир",
+            "salary": 104000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 3,
+        "fields": {
+            "desc": "Разведчик",
+            "salary": 45000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 4,
+        "fields": {
+            "desc": "Фармацевт",
+            "salary": 132000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 5,
+        "fields": {
+            "desc": "Искусствовед",
+            "salary": 46000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 6,
+        "fields": {
+            "desc": "Веб-программист",
+            "salary": 111000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 7,
+        "fields": {
+            "desc": "Электрик",
+            "salary": 115000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 8,
+        "fields": {
+            "desc": "Аллерголог-иммунолог",
+            "salary": 115000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 9,
+        "fields": {
+            "desc": "Квасник",
+            "salary": 59000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 10,
+        "fields": {
+            "desc": "Архитектор",
+            "salary": 109000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 11,
+        "fields": {
+            "desc": "Художник",
+            "salary": 90000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 12,
+        "fields": {
+            "desc": "Повар",
+            "salary": 58000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 13,
+        "fields": {
+            "desc": "Художник по свету",
+            "salary": 134000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 14,
+        "fields": {
+            "desc": "Врач УЗ-диагностики",
+            "salary": 94000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 15,
+        "fields": {
+            "desc": "Шорник",
+            "salary": 91000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 16,
+        "fields": {
+            "desc": "Специалист по клеточным технологиям",
+            "salary": 70000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 17,
+        "fields": {
+            "desc": "Режиссёр",
+            "salary": 22000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 18,
+        "fields": {
+            "desc": "Гирудотерапевт",
+            "salary": 105000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 19,
+        "fields": {
+            "desc": "Бортинженер",
+            "salary": 66000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 20,
+        "fields": {
+            "desc": "Издатель",
+            "salary": 84000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 21,
+        "fields": {
+            "desc": "Лекальщик",
+            "salary": 31000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 22,
+        "fields": {
+            "desc": "Мясник",
+            "salary": 148000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 23,
+        "fields": {
+            "desc": "Технолог",
+            "salary": 113000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 24,
+        "fields": {
+            "desc": "Страховой агент",
+            "salary": 93000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 25,
+        "fields": {
+            "desc": "Столяр",
+            "salary": 63000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 26,
+        "fields": {
+            "desc": "Кнопочник",
+            "salary": 25000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 27,
+        "fields": {
+            "desc": "Колхозник",
+            "salary": 121000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 28,
+        "fields": {
+            "desc": "Лётчик",
+            "salary": 138000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 29,
+        "fields": {
+            "desc": "Таксист",
+            "salary": 100000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 30,
+        "fields": {
+            "desc": "Златокузнец",
+            "salary": 131000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 31,
+        "fields": {
+            "desc": "Шлифовщик",
+            "salary": 58000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 32,
+        "fields": {
+            "desc": "Расточник",
+            "salary": 20000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 33,
+        "fields": {
+            "desc": "Ихтиолог",
+            "salary": 96000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 34,
+        "fields": {
+            "desc": "Диаконисса",
+            "salary": 33000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 35,
+        "fields": {
+            "desc": "Старшина",
+            "salary": 87000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 36,
+        "fields": {
+            "desc": "Сомнолог",
+            "salary": 128000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 37,
+        "fields": {
+            "desc": "Борт-радист",
+            "salary": 15000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 38,
+        "fields": {
+            "desc": "Детектив",
+            "salary": 54000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 39,
+        "fields": {
+            "desc": "Проректор",
+            "salary": 27000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 40,
+        "fields": {
+            "desc": "Автоэлектрик",
+            "salary": 145000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 41,
+        "fields": {
+            "desc": "Семейный врач",
+            "salary": 62000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 42,
+        "fields": {
+            "desc": "Брейдер",
+            "salary": 120000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 43,
+        "fields": {
+            "desc": "Бортпроводник",
+            "salary": 100000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 44,
+        "fields": {
+            "desc": "Дизайнер-конструктор",
+            "salary": 100000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 45,
+        "fields": {
+            "desc": "Наводчик орудия",
+            "salary": 84000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 46,
+        "fields": {
+            "desc": "Авиационный техник",
+            "salary": 119000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 47,
+        "fields": {
+            "desc": "Психоневропатолог",
+            "salary": 143000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 48,
+        "fields": {
+            "desc": "Кредитный консультант",
+            "salary": 120000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 49,
+        "fields": {
+            "desc": "Фортификатор",
+            "salary": 54000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 50,
+        "fields": {
+            "desc": "Дознаватель",
+            "salary": 80000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 51,
+        "fields": {
+            "desc": "Сварщик",
+            "salary": 71000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 52,
+        "fields": {
+            "desc": "Рефлексотерапевт",
+            "salary": 124000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 53,
+        "fields": {
+            "desc": "Сурдолог",
+            "salary": 63000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 54,
+        "fields": {
+            "desc": "Инженер",
+            "salary": 150000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 55,
+        "fields": {
+            "desc": "Полицейский",
+            "salary": 65000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 56,
+        "fields": {
+            "desc": "Переплётчик",
+            "salary": 37000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 57,
+        "fields": {
+            "desc": "Моторист",
+            "salary": 136000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 58,
+        "fields": {
+            "desc": "Водолаз",
+            "salary": 15000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 59,
+        "fields": {
+            "desc": "Энтомолог",
+            "salary": 99000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 60,
+        "fields": {
+            "desc": "Хлебороб",
+            "salary": 142000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 61,
+        "fields": {
+            "desc": "Продавец",
+            "salary": 108000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 62,
+        "fields": {
+            "desc": "Машинист",
+            "salary": 66000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 63,
+        "fields": {
+            "desc": "Физиотерапевт",
+            "salary": 144000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 64,
+        "fields": {
+            "desc": "Военный дознаватель",
+            "salary": 89000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 65,
+        "fields": {
+            "desc": "Трейдер",
+            "salary": 138000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 66,
+        "fields": {
+            "desc": "Проводник",
+            "salary": 43000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 67,
+        "fields": {
+            "desc": "Инженер-гальваник",
+            "salary": 49000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 68,
+        "fields": {
+            "desc": "Мастер маникюра",
+            "salary": 18000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 69,
+        "fields": {
+            "desc": "Печатник",
+            "salary": 105000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 70,
+        "fields": {
+            "desc": "Борт-механик",
+            "salary": 36000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 71,
+        "fields": {
+            "desc": "Андролог",
+            "salary": 15000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 72,
+        "fields": {
+            "desc": "Зенитчик",
+            "salary": 130000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 73,
+        "fields": {
+            "desc": "Преподаватель",
+            "salary": 127000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 74,
+        "fields": {
+            "desc": "Социолог",
+            "salary": 85000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 75,
+        "fields": {
+            "desc": "Трансфузиолог",
+            "salary": 121000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 76,
+        "fields": {
+            "desc": "Дилер",
+            "salary": 114000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 77,
+        "fields": {
+            "desc": "Проходчик",
+            "salary": 29000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 78,
+        "fields": {
+            "desc": "Терапевт",
+            "salary": 135000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 79,
+        "fields": {
+            "desc": "Верстальщик",
+            "salary": 25000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 80,
+        "fields": {
+            "desc": "Инженер-гидравлик",
+            "salary": 79000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 81,
+        "fields": {
+            "desc": "Математик",
+            "salary": 138000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 82,
+        "fields": {
+            "desc": "Крановщик",
+            "salary": 44000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 83,
+        "fields": {
+            "desc": "Проктолог",
+            "salary": 60000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 84,
+        "fields": {
+            "desc": "Токарь-карусельщик",
+            "salary": 148000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 85,
+        "fields": {
+            "desc": "Инженер-строитель",
+            "salary": 149000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 86,
+        "fields": {
+            "desc": "Бортмеханик",
+            "salary": 145000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 87,
+        "fields": {
+            "desc": "Драпировщик",
+            "salary": 46000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 88,
+        "fields": {
+            "desc": "Биоинженер",
+            "salary": 80000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 89,
+        "fields": {
+            "desc": "Скотник",
+            "salary": 107000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 90,
+        "fields": {
+            "desc": "Овчар",
+            "salary": 123000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 91,
+        "fields": {
+            "desc": "Релайтер",
+            "salary": 71000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 92,
+        "fields": {
+            "desc": "Уролог",
+            "salary": 21000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 93,
+        "fields": {
+            "desc": "Онколог",
+            "salary": 96000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 94,
+        "fields": {
+            "desc": "Ортодонт",
+            "salary": 104000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 95,
+        "fields": {
+            "desc": "Контент-менеджер",
+            "salary": 71000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 96,
+        "fields": {
+            "desc": "Гример",
+            "salary": 57000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 97,
+        "fields": {
+            "desc": "Мельник",
+            "salary": 95000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 98,
+        "fields": {
+            "desc": "Портье",
+            "salary": 113000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 99,
+        "fields": {
+            "desc": "Пчеловод",
+            "salary": 42000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 100,
+        "fields": {
+            "desc": "Грейдерист",
+            "salary": 54000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 101,
+        "fields": {
+            "desc": "Библиотековед",
+            "salary": 15000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 102,
+        "fields": {
+            "desc": "Пономарь",
+            "salary": 98000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 103,
+        "fields": {
+            "desc": "Гранатомётчик",
+            "salary": 83000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 104,
+        "fields": {
+            "desc": "Штукатур",
+            "salary": 100000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 105,
+        "fields": {
+            "desc": "Библиотекарь",
+            "salary": 84000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 106,
+        "fields": {
+            "desc": "Снабженец",
+            "salary": 122000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 107,
+        "fields": {
+            "desc": "Гепатолог",
+            "salary": 47000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 108,
+        "fields": {
+            "desc": "Государственный исполнитель",
+            "salary": 82000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 109,
+        "fields": {
+            "desc": "Актуарий",
+            "salary": 27000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 110,
+        "fields": {
+            "desc": "Дизайнер",
+            "salary": 100000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 111,
+        "fields": {
+            "desc": "Няня",
+            "salary": 87000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 112,
+        "fields": {
+            "desc": "Священник",
+            "salary": 35000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 113,
+        "fields": {
+            "desc": "Музыкант",
+            "salary": 66000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 114,
+        "fields": {
+            "desc": "Киномеханик",
+            "salary": 17000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 115,
+        "fields": {
+            "desc": "Капитан судна",
+            "salary": 83000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 116,
+        "fields": {
+            "desc": "HTML-верстальщик",
+            "salary": 89000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 117,
+        "fields": {
+            "desc": "SMM-менеджер",
+            "salary": 33000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 118,
+        "fields": {
+            "desc": "UX-дизайнер",
+            "salary": 134000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 119,
+        "fields": {
+            "desc": "Web-интегратор",
+            "salary": 131000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 120,
+        "fields": {
+            "desc": "Администратор базы данных",
+            "salary": 32000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 121,
+        "fields": {
+            "desc": "Администратор сайта",
+            "salary": 59000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 122,
+        "fields": {
+            "desc": "Аналитик Big Data",
+            "salary": 136000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 123,
+        "fields": {
+            "desc": "Блогер",
+            "salary": 116000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 124,
+        "fields": {
+            "desc": "Блокчейн-разработчик",
+            "salary": 147000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 125,
+        "fields": {
+            "desc": "Веб-дизайнер",
+            "salary": 146000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 126,
+        "fields": {
+            "desc": "Диктор",
+            "salary": 15000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 127,
+        "fields": {
+            "desc": "Копирайтер",
+            "salary": 35000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 128,
+        "fields": {
+            "desc": "Радиоведущий",
+            "salary": 68000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 129,
+        "fields": {
+            "desc": "Сетевой инженер",
+            "salary": 34000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 130,
+        "fields": {
+            "desc": "Системный администратор",
+            "salary": 79000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 131,
+        "fields": {
+            "desc": "Системный аналитик",
+            "salary": 50000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 132,
+        "fields": {
+            "desc": "Специалист по информационной безопасности",
+            "salary": 24000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 133,
+        "fields": {
+            "desc": "Спичрайтер",
+            "salary": 29000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 134,
+        "fields": {
+            "desc": "Тележурналист",
+            "salary": 27000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 135,
+        "fields": {
+            "desc": "Тестировщик",
+            "salary": 122000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 136,
+        "fields": {
+            "desc": "Воспитатель",
+            "salary": 123000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 137,
+        "fields": {
+            "desc": "Дефектолог",
+            "salary": 73000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 138,
+        "fields": {
+            "desc": "Кинолог",
+            "salary": 139000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 139,
+        "fields": {
+            "desc": "Педагог",
+            "salary": 114000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 140,
+        "fields": {
+            "desc": "Ректор",
+            "salary": 78000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 141,
+        "fields": {
+            "desc": "Сурдопедагог",
+            "salary": 23000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 142,
+        "fields": {
+            "desc": "Тифлопедагог",
+            "salary": 19000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 143,
+        "fields": {
+            "desc": "Учитель",
+            "salary": 142000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 144,
+        "fields": {
+            "desc": "Хореограф",
+            "salary": 110000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 145,
+        "fields": {
+            "desc": "Адвокат",
+            "salary": 136000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 146,
+        "fields": {
+            "desc": "Делопроизводитель",
+            "salary": 127000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 147,
+        "fields": {
+            "desc": "Дипломат",
+            "salary": 103000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 148,
+        "fields": {
+            "desc": "Инспектор по охране труда",
+            "salary": 104000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 149,
+        "fields": {
+            "desc": "Нотариус",
+            "salary": 97000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 150,
+        "fields": {
+            "desc": "Правовед",
+            "salary": 15000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 151,
+        "fields": {
+            "desc": "Прокурор",
+            "salary": 108000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 152,
+        "fields": {
+            "desc": "Следователь",
+            "salary": 134000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 153,
+        "fields": {
+            "desc": "Судебный пристав",
+            "salary": 136000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 154,
+        "fields": {
+            "desc": "Судья",
+            "salary": 26000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 155,
+        "fields": {
+            "desc": "Тюремный надзиратель",
+            "salary": 137000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 156,
+        "fields": {
+            "desc": "Юрист",
+            "salary": 120000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 157,
+        "fields": {
+            "desc": "Авиадиспетчер",
+            "salary": 14000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 158,
+        "fields": {
+            "desc": "Автогонщик",
+            "salary": 148000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 159,
+        "fields": {
+            "desc": "Космонавт",
+            "salary": 44000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 160,
+        "fields": {
+            "desc": "Летчик",
+            "salary": 20000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 161,
+        "fields": {
+            "desc": "Логист",
+            "salary": 41000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 162,
+        "fields": {
+            "desc": "Лоцман",
+            "salary": 71000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 163,
+        "fields": {
+            "desc": "Стюардесса",
+            "salary": 36000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 164,
+        "fields": {
+            "desc": "Штурман",
+            "salary": 114000
+        }
+    },
+    {
+        "model": "workers.position",
+        "pk": 165,
+        "fields": {
+            "desc": "Экспедитор",
+            "salary": 53000
+        }
+    }
+]

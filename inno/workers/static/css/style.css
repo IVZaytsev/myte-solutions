@@ -1,0 +1,8 @@
+#myUL,ul{list-style-type:none}
+#myUL{margin:20px;padding:0;font-family:Arial,sans-serif;width:100%}
+#myUL img{vertical-align: middle}
+.caret{cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.caret::before{content:"\25B6";color:#000;display:inline-block;margin-right:6px}
+.caret-down::before{-ms-transform:rotate(90deg);-webkit-transform:rotate(90deg)}
+.nested{display:none}
+.active{display:block}

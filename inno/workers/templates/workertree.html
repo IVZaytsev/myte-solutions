@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static '/css/style.css' %}">
+	<script type="text/javascript" src="{% static '/js/carpet.js' %}"></script>
+</head>
+<body>
+	<ul id="myUL">
+		<p1>Список сотрудников предприятия:</p1>
+		{% for department in departList %}
+		<li><span class="caret"><img src="{% static '/png/department.png' %}"> {{ department.desc }}</span>
+			<ul class="nested">
+				<li><img src="{% static '/png/chief.png' %}"> <b>Начальник отдела</b>: {{ department.chief }}</li>
+				<li><span class="caret">Сотрудники [{{ department.workers.all|length }}]</span>
+					<ul class="nested">
+						{% for worker in department.workers.all|dictsort:"fullname" %}
+						</li><li><span class="caret">{{ worker.fullname }}</span>
+						<ul class="nested">
+							<li><img src="{% static '/png/user.png' %}"> <b>Должность</b>: {{ worker.position.desc }}</li>
+							<li><img src="{% static '/png/salary.png' %}"> <b>Заработная плата</b>: {{ worker.position.salary }}</li>
+						</ul>
+						{% endfor %}
+					</ul>
+				</li>
+			</ul>
+		{% endfor %}
+	</ul>
+</body>
+</html>
+
