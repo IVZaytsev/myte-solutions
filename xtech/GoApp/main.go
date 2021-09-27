@@ -5,102 +5,159 @@ import (
 	"log"
 	"time"
 	"strings"
-	"io/ioutil"
 	"net/http"
 	"encoding/json"
 	"database/sql"
 	_ "github.com/go-sql-driver/mysql"
 )
 
+// Структура входных данных
 type Ticker struct {
-    Symbol	string	`json:"symbol"`
-    Price	float64	`json:"price_24h"`
-    Volume	float64	`json:"volume_24h"`
-	LastTrade	float64	`json:"last_trade_price"`
+	Symbol         string  `json:"symbol"`
+	Price24H       float64 `json:"price_24h"`
+	Volume24H      float64 `json:"volume_24h"`
+	LastTradePrice float64 `json:"last_trade_price"`
 }
 
+// Структура выходных данных
 type TickerOut struct {
-    Price	float64	`json:"price_24h"`
-    Volume	float64	`json:"volume_24h"`
-	LastTrade	float64	`json:"last_trade_price"`
+	Price24H       float64 `json:"price_24h"`
+	Volume24H      float64 `json:"volume_24h"`
+	LastTradePrice float64 `json:"last_trade_price"`
 }
 
-var URL_Tickers = "https://api.blockchain.com/v3/exchange/tickers"
-var Tickers = []Ticker{}
+const tickersURL string = "https://api.blockchain.com/v3/exchange/tickers"
 
-func get_tickers() {
+var DB *sql.DB							// Обработчик запросов к БД
+var tickers = []Ticker{}				// Хранилище входных данных
+var tickersOut = map[string]TickerOut{}	// Хранилище выходных данных
+
+// Функция инициализации БД MySQL
+// Инициализирует глобальную переменную <DB> для работы с БД
+// Возвращает true при успешном завершении
+func db_init() bool {
+	var err error
+	
+	if DB, err = sql.Open("mysql", "docker:docker@tcp(db:3306)/test_db"); err != nil {
+		log.Fatal(err)
+		return false
+	} else {
+		DB.SetMaxOpenConns(50)
+		DB.SetMaxIdleConns(10)
+		err = DB.Ping()
+		if err != nil {
+			log.Fatal("MySQL error : ", err)
+			return false
+		}
+		return true
+	}
+}
+
+// Функция получения данных с сайта <tickersURL>
+// Отправляет GET-запрос и десериализует JSON-содержимое в глобальный массив <tickers>
+// Возвращает true при успешном завершении
+func get_tickers() bool {
 	httpClient := http.Client{
 		Timeout: time.Second * 2,
 	}
 	
-	req, err := http.NewRequest(http.MethodGet, URL_Tickers, nil)
+	request, err := http.NewRequest(http.MethodGet, tickersURL, nil)
 	if err != nil {
 		log.Fatal(err)
-		return
+		return false
 	}
 	
-	res, err := httpClient.Do(req)
+	response, err := httpClient.Do(request)
 	if err != nil {
 		log.Fatal(err)
-		return
+		return false
 	}
-	
-	if res.Body != nil {
-		defer res.Body.Close()
-	}
+	defer response.Body.Close()
 
-	body, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		log.Fatal(err)
-		return
+	if err = json.NewDecoder(response.Body).Decode(&tickers); err != nil {
+		log.Fatal("JSON parse error : ", err)
+		return false
 	}
 	
-	jsonErr := json.Unmarshal(body, &Tickers)
-	if jsonErr != nil {
-		log.Fatal(jsonErr)
-		return
-	}
-	
-	db_record()
+	return true
 }
 
-func db_record() {
-	DB, err := sql.Open("mysql", "docker:docker@tcp(db:3306)/test_db")
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	defer DB.Close()
-
-
-	symArray := []string{}
-	recArray := []string{}
-
-	for _, ticker := range Tickers {
-		synStr := fmt.Sprintf("('%s')", ticker.Symbol)
-		recStr := fmt.Sprintf("((SELECT `id` FROM `symbols` WHERE `symbol`='%s'), %f, %f, %f)", ticker.Symbol, ticker.Price, ticker.Volume, ticker.LastTrade)
+// Функция сохранения в базу данных
+// Собирает глобальный массив tickersOut
+// Возвращает true при успешном завершении
+func db_insert() {
+	var symbolArray = []string{}
+	var recordArray = []string{}
+	
+	// Собираем два SQL-запроса
+	for _, ticker := range tickers {
+		symbolStr := fmt.Sprintf("('%s')", ticker.Symbol)
+		recordStr := fmt.Sprintf("((SELECT `id` FROM `symbols` WHERE `symbol`='%s'), %f, %f, %f)", ticker.Symbol, ticker.Price24H, ticker.Volume24H, ticker.LastTradePrice)
 		
-		symArray = append(symArray, synStr)
-		recArray = append(recArray, recStr)
+		symbolArray = append(symbolArray, symbolStr)
+		recordArray = append(recordArray, recordStr)
+	}
+
+	// Сохраняем новые символы, если таковые появились
+	var sqlQuery1 string = fmt.Sprintf("INSERT IGNORE INTO `symbols` (symbol) VALUES %s;", strings.Join(symbolArray, ","))
+	if _, err := DB.Exec(sqlQuery1); err != nil {
+		log.Fatal("MySQL INSERT error : ", err)
 	}
 	
-	sqlQuery1 := fmt.Sprintf("INSERT IGNORE INTO `symbols` (symbol) VALUES %s;", strings.Join(symArray, ","))
-	_, err = DB.Exec(sqlQuery1)
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	
-	sqlQuery2 := fmt.Sprintf("INSERT IGNORE INTO `records` (symbol, price_24h, volume_24h, last_trade_price) VALUES %s;", strings.Join(recArray, ","))
-	_, err = DB.Exec(sqlQuery2)
-	if err != nil {
-		log.Fatal(err)
-		return
+	// Сохраняем архив значений символов с новой временной меткой
+	var sqlQuery2 string = fmt.Sprintf("INSERT IGNORE INTO `records` (symbol, price_24h, volume_24h, last_trade_price) VALUES %s;", strings.Join(recordArray, ","))
+	if _, err := DB.Exec(sqlQuery2); err != nil {
+		log.Fatal("MySQL INSERT error : ", err)
 	}
 }
 
-func runHTTPServer() {
-	fmt.Printf("Starting server at port 8080\n")
+// Функция выборки записей из базы данных
+// Собирает глобальный массив tickersOut
+// Возвращает true при успешном завершении
+func db_select() bool {
+	sqlQuery3 := "SELECT symbols.symbol, price_24h, volume_24h, last_trade_price FROM `records` INNER JOIN `symbols` ON records.symbol = symbols.id WHERE `stamp`=(SELECT MAX(stamp) FROM records);"
+	rows, err := DB.Query(sqlQuery3)
+	if err != nil {
+		log.Fatal("MySQL SELECT error : ", err)
+		return false
+	}
+
+	tickers := make([]*Ticker, 0)
+	for rows.Next() {
+		ticker := new(Ticker)
+		err := rows.Scan(&ticker.Symbol, &ticker.Price24H, &ticker.Volume24H, &ticker.LastTradePrice)
+		if err != nil {
+			log.Fatal("MySQL result scan error : ", err)
+			return false
+		}
+		tickers = append(tickers, ticker)
+	}
+
+	for _, ticker := range tickers {
+		tickersOut[ticker.Symbol] = TickerOut{
+			Price24H: ticker.Price24H,
+			Volume24H: ticker.Volume24H,
+			LastTradePrice: ticker.LastTradePrice,
+		}
+	}
+	
+	return true
+}
+
+// Горутина сбора и сохранения данных с сайта <tickersURL>
+// Бесконечный цикл с паузой в 30 секунд
+func start_scraping() {
+	for ok := true; ok; ok = true {
+		if get_tickers() {
+			db_insert()
+		}
+		time.Sleep(30 * time.Second)
+	}
+}
+
+// Функция запуска http-сервера и настройки функции обработки входящих запросов
+func start_http_server() {
+	fmt.Println("Starting server at port 8080")
 	http.HandleFunc("/", mainHandler)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
@@ -108,73 +165,42 @@ func runHTTPServer() {
 	}
 }
 
-func mainHandler(w http.ResponseWriter, r *http.Request) {
-	if r.URL.Path != "/" {
-		http.Error(w, http.StatusText(404), http.StatusNotFound)
+// Обработчик входящих запросов http-сервера. Принимает только GET-запросы в корень
+func mainHandler(writer http.ResponseWriter, request *http.Request) {
+	if request.URL.Path != "/" {
+		http.Error(writer, http.StatusText(404), http.StatusNotFound)
 		return
 	}
 	
-	if r.Method != "GET" {
-		http.Error(w, http.StatusText(405), http.StatusMethodNotAllowed)
+	if request.Method != "GET" {
+		http.Error(writer, http.StatusText(405), http.StatusMethodNotAllowed)
 		return
 	}
-
-	DB, err := sql.Open("mysql", "docker:docker@tcp(db:3306)/test_db")
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	defer DB.Close()
-
-	sqlQuery3 := "SELECT symbols.symbol, price_24h, volume_24h, last_trade_price FROM `records` INNER JOIN `symbols` ON records.symbol = symbols.id WHERE `stamp`=(SELECT MAX(stamp) FROM records);"
-	rows, err := DB.Query(sqlQuery3)
-	if err != nil {
-		http.Error(w, http.StatusText(500), http.StatusInternalServerError)
-		log.Fatal(err)
-		return
-	}
-	defer rows.Close()
-
-	tickers := make([]*Ticker, 0)
-	for rows.Next() {
-		ticker := new(Ticker)
-		err := rows.Scan(&ticker.Symbol, &ticker.Price, &ticker.Volume, &ticker.LastTrade)
+	
+	if db_select() {
+		jsonText, err := json.Marshal(tickersOut)
 		if err != nil {
-			http.Error(w, http.StatusText(500), http.StatusInternalServerError)
-			log.Fatal(err)
+			http.Error(writer, http.StatusText(500), http.StatusInternalServerError)
 			return
 		}
-		tickers = append(tickers, ticker)
-	}
-
-	mapTickers := make(map[string]TickerOut)
-	for _, ticker := range tickers {
-		mapTickers[ticker.Symbol] = TickerOut{
-			Price: ticker.Price,
-			Volume: ticker.Volume,
-			LastTrade: ticker.LastTrade,
-		}
-	}
-	
-	jsonText, err := json.Marshal(mapTickers)
-	if err != nil {
-		log.Fatal(err)
-		return
-	}	
-	
-	fmt.Fprintf(w, string(jsonText))
-}
-
-func myTask(){
-	for ok := true; ok; ok = true {
-		get_tickers()
-		time.Sleep(30 * time.Second)
+		
+		fmt.Fprintf(writer, string(jsonText))
 	}
 }
 
 func main() {
-	fmt.Println("Program starting...")
+	// Если подключение к БД успешно
+	// Создаём 2 горутины:
+	// go start_scraping()			- сбор данных
+	// go start_http_server()		- http-сервер для отображения
+	if db_init() {
+		defer DB.Close()
+		go start_scraping()
+		go start_http_server()
+	}
+	
+	// Заглушка для удобного завершения работы приложения
 	time.Sleep(5 * time.Second)
-	go myTask()
-	runHTTPServer()
+	fmt.Print("Press 'Enter' to exit...")
+	fmt.Scanln()
 }
